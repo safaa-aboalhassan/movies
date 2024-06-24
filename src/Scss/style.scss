@@ -1,0 +1,52 @@
+@import 'basicStyle';
+@import './mixin/mixin.scss';
+.Appstyle{
+    background-color:$bgColor;
+    font-size: $fontColor;
+    color: $fontColor;
+    font-family: Montserrat; 
+}
+.Navstyle{
+    background-color:$bgColor;
+   font-size: $fontColor;
+   color: $fontColor;
+   font-family: Montserrat;
+   font-weight: bolder;
+   font-size: large;
+  .Navlistyle{
+    font-size: $fontColor;
+    color: $fontColor;
+    font-family: Montserrat;
+    font-weight: bolder;
+    font-size: large;
+    &:hover {
+        color:$secondFontColor;
+        
+        }
+  }
+  
+}
+.img{
+width:80%;
+height:80%;
+
+}
+.buttonstyle{
+    background-color:$bgColor ;
+    color:$fontColor;
+    &:hover {
+        background-color: gray;
+        color:black;
+        }
+}
+.tittle{
+    font-size: large;
+    font-family: Montserrat;
+}
+.btndetaile{
+    color: $fontColor;
+    font-family: Montserrat; 
+    width: fit-content;
+    height: fit-content;
+    margin: 20px;
+}
