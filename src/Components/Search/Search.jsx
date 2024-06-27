@@ -39,7 +39,7 @@ export default function Search() {
   return (
     <>
         <div className="row  Appstyle ">
-                    {searchResults.length>0?searchResults.map((movie)=><Card key={movie.id} data={movie}/>):<h2>search not found </h2>}                                 
+                    {searchResults.length>0?searchResults.map((movie)=><Card key={movie.id} data={movie}/>):<h2>search not found</h2>}                                 
                 </div>
     </>
   );
