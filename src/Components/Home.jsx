@@ -20,6 +20,7 @@ export default function Home() {
         <>
             <div className='Appstyle'>
             <div className='container '>
+            <h1>Trend movies</h1>
                 <div className="row  ">
                     {movies.length>0?movies.map((movie)=><Card key={movie.id} data={movie}/>):<Loder />}                                 
                 </div>

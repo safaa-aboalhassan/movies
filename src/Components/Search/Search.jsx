@@ -1,54 +1,46 @@
 import React, { useContext, useEffect, useState } from 'react';
+
+import { MovieContext } from '../Context/MovieSearch';
 import axiosInstance from '../../Config/axiosInstance';
-import { Link, useNavigate } from 'react-router-dom'
-import { MovieContext,MovieSearch } from '../Context/MovieSearch';
+import Loder from '../Loder';
+import Card from '../Card/Card';
 
 
 export default function Search() {
-  const { searchWord } = useContext(MovieContext);
-  
-  const [searchResults, setSearchResults] = useState([]);
+
+  const { searchWord } = useContext(MovieContext); 
+  const [searchResults, setSearchResults] = useState([]); 
+
+  // Function to search for movies based on movieName
   const searchMovie = (movieName) => {
     axiosInstance.get(`/search/movie?query=${movieName}`)
       .then(response => {
-        setSearchResults(response.data.results);
+        setSearchResults(response.data.results); 
+        console.log("search is " + response)
       })
       .catch(error => {
         console.error('Error fetching movies:', error);
-        setSearchResults([]);
+        setSearchResults([]); 
+      
       });
+      
+      console.log("search"+searchWord)
   };
 
+ 
   useEffect(() => {
-    searchMovie(searchWord);
-}, [searchWord]);
+    if (searchWord.trim() !== '') { 
+      searchMovie(searchWord); 
+    } else {
+      setSearchResults([]); 
+    }
+  }, [searchWord]); 
+
   return (
     <>
-      <div className="row">
-        {searchResults.length > 0 ? (
-          searchResults.map(movie => (
-            <div className="col-md-3 mb-4" key={movie.id}>
-              <div className="card bg-dark">
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                  alt={movie.original_title}
-                  className="card-img-top"
-                  style={{ borderRadius: '10%' }}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">
-                    {movie.title}
-                  </h5>
+        <div className="row  Appstyle ">
+                    {searchResults.length>0?searchResults.map((movie)=><Card key={movie.id} data={movie}/>):<h2>search not found </h2>}                                 
                 </div>
-              </div>
-            </div>
-          ))
-        ) : (
-          <div className="col-md-12 text-center">
-            {searchResults.length === 0 && <p>No movies found.</p>}
-          </div>
-        )}
-      </div>
     </>
   );
 }

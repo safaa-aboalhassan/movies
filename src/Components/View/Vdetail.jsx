@@ -21,10 +21,13 @@ export default function Vdetail(props) {
                 </div>
                 <div className='col-4    m-3 textdetail my-9'>
                     <h3>{original_title}</h3>
-                    <h5 className='my-2'>  {tagline}</h5>
-                    <button className='btn  btn-info p-1 my-2 mx-2 btndetaile'>{genres[0].name}</button>
-                    <button className='btn  btn-info p-1 mx-2 btndetaile'>{genres[1].name}</button>
-                    <button className='btn  btn-info p-1 btndetaile'>{genres[2].name}</button>
+                   {genres.map(genres => (
+                        <div key={genres.id} className="col-2 flex-nowrap justify-content-lg-around">
+                           <button className='btn  btn-info p-1 my-2 mx-2 btndetaile'>{genres.name}</button>
+                        </div>
+                    ))}
+                  
+                    
                    
                     <h5 className='my-2'>vote:{vote_average}</h5>
                     <h5 className='my-2'>vote count:{vote_count}</h5>

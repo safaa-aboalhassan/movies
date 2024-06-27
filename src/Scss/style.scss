@@ -35,8 +35,8 @@ height:80%;
     background-color:$bgColor ;
     color:$fontColor;
     &:hover {
-        background-color: gray;
-        color:black;
+        background-color: rgb(160, 168, 171);
+     
         }
 }
 .tittle{
@@ -49,4 +49,18 @@ height:80%;
     width: fit-content;
     height: fit-content;
     margin: 20px;
+}
+.body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.loginstyle{
+background-color: $bgColor ;
+color: white;
+border-radius: 6%;
+font-size: large;
+font-family:Montserrat ;
+margin: auto;
+container: 70%;
+margin-bottom:30% ;
 }

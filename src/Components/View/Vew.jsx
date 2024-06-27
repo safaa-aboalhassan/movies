@@ -20,7 +20,7 @@ export default function Vew() {
         console.log("Received movie data:", res.data);
         setDetail(res.data);
         setLoading(false); // Set loading to false after data is fetched
-      })
+      },2000)
       .catch((error) => {
         console.error('Error fetching movie data:', error);
         Swal.fire({

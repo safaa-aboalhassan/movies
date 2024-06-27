@@ -35,11 +35,36 @@
   color: #fff;
 }
 .buttonstyle:hover {
-  background-color: gray;
-  color: black;
+  background-color: rgb(160, 168, 171);
 }
 
 .tittle {
   font-size: large;
   font-family: Montserrat;
+}
+
+.btndetaile {
+  color: #fff;
+  font-family: Montserrat;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 20px;
+}
+
+.body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.loginstyle {
+  background-color: #131722;
+  color: white;
+  border-radius: 6%;
+  font-size: large;
+  font-family: Montserrat;
+  margin: auto;
+  container: 70%;
+  margin-bottom: 30%;
 }/*# sourceMappingURL=style.css.map */

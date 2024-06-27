@@ -1,16 +1,20 @@
 import React from 'react'
-import { ColorRing } from 'react-loader-spinner'
+import { BallTriangle, ColorRing, InfinitySpin } from 'react-loader-spinner'
 
-export default function loder() {
+export default function Loder() {
   return (
-    <div className='d-flex vh-100 justify-content-center align-items-center'>(<ColorRing
-        visible={true}
-        height="80"
-        width="80"
-        ariaLabel="color-ring-loading"
-        wrapperStyle={{}}
-        wrapperClass="color-ring-wrapper"
-        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+   <>
+   <div className='d-flex vh-100 justify-content-center align-items-center'>(<BallTriangle
+   
+   height={100}
+   width={100}
+   radius={5}
+   color="#4fa94d"
+   ariaLabel="ball-triangle-loading"
+   wrapperStyle={{}}
+   wrapperClass=""
+   visible={true}
         />)</div>
+   </>
   )
 }
